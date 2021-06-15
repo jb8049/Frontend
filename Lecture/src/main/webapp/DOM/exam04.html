@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	window.onload =function(){
+		
+		let tags = document.querySelectorAll('td')
+		console.log(tags[0].innerHTML) //ID를 아이디로 변경해보자
+		tags[0].innerHTML = '아이디'
+		
+//		document.getElementsByTagName('td') //태그네임으로 찾고싶다, 그러나 요소가 하나만 나온다는 보장이 없음
+											//여러 개가 나올 확률이 높지..그래서 getElements
+											
+		tags = document.getElementsByTagName('td') // 특정 태그를 찾아서, 어느 태그를 변경할지 인덱스로 접근
+												   // getElementsByTagName은 유사한 것 여러개를 변경할 때 유용? 
+		tags[1].innerText = '패스워드'	
+	}
+	
+	
+	
+	
+
+</script>
+
+</head>
+<body>
+
+	<table style="width:100 ; height : 100;" border="1">
+		<tr>
+			<td>ID</td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>	
+		</tr>
+	</table>
+</body>
+</html>

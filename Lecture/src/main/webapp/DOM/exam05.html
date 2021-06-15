@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+		// 생성한거 했으니까 지우는것도 해보자
+
+		window.onload =function() {
+			let id = document.getElementById('id')
+		//	id.remove()  // 이 키워드는 익스플로러에서는 안먹힌다!
+	
+		// 부모에서 자식을 삭제하도록 해보자, 이거는 익스플로러에서 제거됨
+			id.parentNode.removeChild(id)
+			
+			let pwd = document.getElementById('pwd')
+			
+			pwd.style.fontSize = '15pt'
+			pwd.style.color= 'red'
+			pwd.style.border ='2px dotted blue'
+			pwd.style.backgroundColor = 'yellow'  // 대시 지우고 뒤 대문자, 밑에처럼 해도됨
+//			pwd.style['background-color'] ='pink'
+			
+			
+		}
+	
+
+</script>
+
+</head>
+<body>
+
+	<table style="width:100 ; height : 100;" border="1">
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td id='pwd'>PASSWORD</td>	
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	window.onload =function(){
+//		let id = document.getElementById('id') //나 id의 속성을 통해 어떤 요소를 찾고싶어
+//		id.innerHTML = '아이디' // id를 '아이디'로 변경
+//		console.log(id.innerHTML) //여기서는 innerText도 상관없음, 태그가 없으니까??
+		
+		let id = document.querySelector('#id') // 식별자가 id인 것
+		id.innerHTML ='아이디'
+		
+		let password = document.querySelector('.pwd') //근데 클래스는 복수개?
+		password.innerHTML ='패스워드'
+		
+	}
+	
+	
+	
+	
+
+</script>
+
+</head>
+<body>
+
+	<table style="width:100 ; height : 100;" border="1">
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td class='pwd'>PASSWORD</td>	
+		</tr>
+		<tr>
+			<td class='pwd'>PASSWORD2</td>	
+		</tr>
+	</table>
+</body>
+</html>
