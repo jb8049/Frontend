@@ -30,7 +30,6 @@
 					str += '뽀'
 				}
 				str += '숑'
-				arr[i] += str 
 		}
 				if( (x == 3|| x == 6 || x == 9) && ( y == 3 || y == 6 || y == 9) ){
 					str += '짝'
@@ -39,7 +38,8 @@
 			arr[i] = str
 			
 		
-		}
+		} // 일의 자리, 십의 자리 모두 3 6 9를 포함하지 않는 경우
+		
 		if(parseInt(arr[i] % 10) == 0){ //40, 50처럼 3,6,9를 포함하지 않은 수
 			let num = parseInt(arr[i] / 10)
 			let str ='' // str을 다시 선언해주지 않으니까 undefined가 붙어서 출력됨
@@ -63,8 +63,6 @@
 
 
 </script>
-
-
 
 </head>
 <body>
