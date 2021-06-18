@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	//여러 가지 이벤트가 존재한다!
+	
+	window.onload = function(){
+		
+		let h1Tag = document.createElement('h1')
+		let text = document.createTextNode('클릭하세요')
+		
+		h1Tag.appendChild(text)
+		document.body.appendChild(h1Tag)
+		
+		
+		//고전적 이벤트 모델 DOM level 0
+		h1Tag.onclik = function(){
+			
+			alert('h1 click...')
+		}
+		
+		let btn = document.getElementById('btn02')
+		btn.onclick = function(){
+			
+			alert('btn2 click...')
+		}
+		
+		function clickBtn(){
+			
+			setTimeout(function() {
+				alert('5초 지남...')
+			},5000)
+		}
+	}
+	
+
+	
+	
+
+	
+
+</script>
+
+</head>
+<body>
+	
+	<!-- 인라인 이벤트 모델 DOM level 10 -->
+	<input type ="button" value="클릭" onclick = "alert('click!!')"> 
+	<input type ="button" value="타이머" onclick = "onload.clickBtn()">  <!-- 내가 만든 함수를 호출하도록 만듦,  -->
+	<input type ="button" value="클릭2" id = "btn02"> 
+	
+
+
+
+
+
+
+</body>
+</html>

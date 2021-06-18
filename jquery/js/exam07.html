@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	div{
+		width : 100px;
+		height : 100px;
+		background-color : red;
+	}
+
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	$(document).ready(function(){
+		
+		
+		$('div').hide(1000)
+		$('div').show(1000)
+		
+		$('div').toggle(1000)
+		$('div').toggle(1000) // 한 번더 하면 없어졌다가 다시 보임
+		
+		$('div').fadeOut(1000) // 투명도와 관련있는 fadeout
+		$('div').fadeIn(1000)
+		
+		
+		$('div').fadeToggle(1000)
+		
+		$('div').fadeTo(1000, 0.4) // 0.4의 투명도를 가짐
+		
+		
+		
+		
+	})
+
+	
+</script>
+
+
+</head>
+
+<body>
+	
+	<div>
+	
+	</div>
+	
+	
+</body>
+</html>

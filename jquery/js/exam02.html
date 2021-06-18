@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+	
+	$(document).ready(function(){
+		alert('!!!')
+//		$('h1').hide()
+//		$('#h01').hide() // id가 h1
+//		$('.h01').hide() // 클래스가 h1
+//		$('h1.h01').hide() // h1 태그 중, 클래스가 h01인 것
+//		$('h1#h01').hide() // h1 태그 중, id가 h01인 것
+//		$('h1:first').hide()
+		$('h1:last').hide()
+		
+// 		j쿼리는 선택자로 묶어서 한 번에 다 처리할 수 있다는 장점이 있음.. 이게 가장 큰 장점임!!
+	})
+	
+
+
+/*  j 쿼리를 선호하는 이유가 여기... 위에는 굉장히 편하게 display : none 속성을 부여했는데..
+window.onload = function(){
+		
+		alert('!!!')
+ 		let hTag = document.getElementById('h01')
+		hTag.style.display = 'none'
+		
+		let hTags = document.getElementTagName("h1")
+		hTags.forEach(function(element){
+			element.style.display = 'none'
+			
+		})
+	} */
+ 
+	
+/*	
+	window.onload = function(){
+	
+		alert('!!!')
+		let hTag = document.getElementById('h01')
+		hTag.style.display = 'none' */
+
+
+	
+</script>
+
+
+</head>
+
+<body>
+	<h1 id="h01">Hello</h1>    <!-- display는 공간 자체를 없앰, visibility는 공간은 놔두고 값만 지웠음 -->
+	<h1 id="h02">안녕 </h1>
+	<hr>
+	<h1 class="h01">Hello</h1>
+	<h1 class="h02">안녕 </h1>
+</body>
+</html>

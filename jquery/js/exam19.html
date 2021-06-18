@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	img {
+		width : 200px;
+		height: 200px;
+	}
+</style>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	
+		$('button').click(function(){
+			
+		//	$('img').first().appendTo('body')   /* 첫 번째 이미지를 떼어서 어떤 태그의 자식으로 붙이고 싶다  */
+			$('img').last().prependTo('body')
+		})
+	
+		
+	
+		
+			
+	})
+</script>
+
+
+</head>
+<body>
+	
+	<img src="/Lecture-Web/css/images/cat.jpg">    <!-- 절대경로로 접근  -->
+	<img src="/Lecture-Web/css/images/강아지.jpg">
+	<img src="/Lecture-Web/css/images/o9.jpg">
+	<img src="/Lecture-Web/css/images/nope.gif">
+	<br><br>
+	<button>클릭</button>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

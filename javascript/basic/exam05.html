@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	// 자바스크립트의 오류는 개발자 도구 콘솔창에 뜬다!
+	alert(`a : ${a}, b : ${b}`)
+	
+
+	//호이스팅, 밑에서 만든 변수가 위로 올라오는 것  
+	var a = 10
+	var b = 20
+	
+	alert(`a : ${a}, b : ${b}`)
+	{
+		// 블록 스코프의 의미가 없어짐..
+		var a= 30
+		var c= 50
+		alert(`a : ${a}, b : ${b}, c: ${c}`)
+	}
+	
+	alert(`a : ${a}, b : ${b}, c: ${c}`)
+	
+
+	
+	
+</script>
+</head>
+
+<body>
+	
+</body>
+</html>

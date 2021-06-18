@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	
+	#content {
+		height: 50px;
+		background-color: pink;
+	}
+	
+	#menu {
+		height: 100px;
+		background-color: yellow;
+		margin : 0 20px;        /*margin을 상하0, 좌우20 씩 줌, margin : 0px(위) 20p(우) 0px(아래) 20px(왼) */  
+		padding : 20px;
+		display : none;
+	}
+	
+	
+	
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	$(document).ready(function(){
+		
+		$('#content').mouseenter(function(){	
+			$('#menu').slideDown(2000)
+			$('#menu').slideUp(2000)
+			$('#menu').slideToggle(2000)
+			$('#menu').slideToggle(2000)
+		})
+	})
+
+	
+</script>
+
+
+</head>
+
+<body>
+	
+	<div id="content">마우스를 접근시켜 보세요</div>
+	<div id="menu">메뉴화면입니다.</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	h1 {
+		display : none;
+	}
+
+
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	$(document).ready(function(){
+/*		
+//		3초동안 첫 번째 문장이 화면에 보여진 후, 경고창으로 "complete"라는 내용의 경고창을 보여주기
+//		$('h1').slideDown(3000) // slideDown이 다끝나고 alert를 키고싶다.. 이것을 위해 complete속성을 가지고 있다!
+		$('h1').slideDown(3000,function(){   // 3초 동안의 행위가 끝나고 나면, 뒤에 정의된 함수를 호출!!(콜백함수)
+			
+		alert('complete...') // 이래서 콜백함수가 중요하구나
+		})
+//		alert('complete...')
+*/	
+		
+		/* 3초에 걸쳐 첫 번째 문장을 화면에 보여준 후, 글자색을 파란색으로 변경한 후
+		   슬라이드 효과로 문장을 올라갔다 내려갔다 수행 한 후 배경색을 노란색으로 변경
+		*/
+		
+		/* $('h1').slideDown(3000,function(){
+			
+			$('h1').animate({
+			},function(){
+				$(this).css('color', 'blue')
+			})
+			
+			//올라갔다 내려갔다
+			$('h1').slideDown(2000)
+			$('h1').slideUp(2000)
+			
+	
+			$('h1').animate({
+			},function(){
+				$(this).css('background-color', 'yellow')
+			})
+			
+		}) */
+		
+		//풀이
+		$('h1').fadeIn(3000,function(){
+			
+			$(this).css('color','blue').slideUp(2000),slideDown(2000,function(){
+				$(this).css('background-color', 'yellow')
+			})
+				
+			} // 리턴객체가 계속 자기 자신이 리턴됨, 체이닝 기법을 사용할 수 있다
+			/*
+			$(this).css('color', 'blue')
+			$(this).slideUp()
+			$(this).slideDown(2000, function(){
+				
+				$(this).css('background-color', 'yellow')
+				
+			})*/
+			
+		})
+		
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	
+
+	<h1>첫 번째 문장</h1>
+
+	
+	
+	
+	
+</body>
+</html>

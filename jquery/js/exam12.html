@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	
+
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		/* let pTags = document.getElementsByTagName("p")
+		
+		alert(pTags[0].innerHTML)
+		alert(pTags[0].innerText) */
+	
+		let html = $('p').html()
+		// $('p').eq(1).html()로 접근하면, $('p')[1].innerHTML의 값을 얻을 수 있음
+		// j쿼리로 받아온 태그들도 배열로 저장되지만, 전체는 j쿼리 객체, 각각의 요소는 js 객체임
+		// eq는 자바스크립트 객체를 j쿼리로 객체로 변환해서 html() 함수를 사용할 수 있음
+		
+		let text = $('p').text()
+		
+		alert('추출된 html : ' +  html) // html은 p태그 0번지에 있는 데이터만 나옴
+		alert('추출된 text : ' + text)  // text는 p태그 0번지 1번지에 있는 데이터들이 다 나옴..
+		
+		
+		$('button').click(function(){
+			/* let inputTag = document.getElementById("name")
+			let name = inputTag.value
+			
+			alert('입력된 이름 : ' + name)  // 이거를 j쿼리로 해보자*/
+			
+			let name = $('#name').val()  // j쿼리로 뽑아낸 value
+			
+			alert('입력된 이름 : ' + name)
+		
+		})
+		
+		let addr = $('a').attr('href') //a의 속성값을 뽑아내기
+		alert('추출된 주소 : ' + addr)
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	<p>내 이름은 <strong>홍길동</strong>이고, 별명은 <em>의적</em>입니다</p>
+	<p>내 이름은 <strong>홍길순</strong>이고, 별명은 <em>의적2</em>입니다</p>	
+	
+	이름 : <input type="text" id="name">
+	<button>입력완료</button>
+	<a href="http://www.naver.com">네이버</a>
+	
+</body>
+</html>

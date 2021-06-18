@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+/*title 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+/*cake's history 폰트'*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
+/*본문 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+/* bakery cafe 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@700&display=swap');
+
+
+body {
+	width : 800pt;
+	margin-left: auto;
+	margin-right: auto;
+	background: url("img/back.png");
+	background-repeat: repeat;
+}
+
+
+p{
+	text-indent: 10px;
+	font-family: 'Nanum Brush Script', cursive;
+	font-size: large;
+}
+
+div{
+	/*내용이 박스를 넘어간 경우 스크롤바 생성*/
+	overflow: auto;
+}
+
+#header{
+	height: 70pt;
+	overflow: hidden;
+}
+
+.header_left{
+	height: 70pt;
+	width: 25%;
+	float: left;
+}
+
+.header_right{
+	height: 70pt;
+	width : 75%;
+	float: right;
+	margin-top: 8px;
+	overflow: hidden;
+}
+
+#aside{
+	height: 400pt;
+	width: 20%;
+	float: left; 
+}
+
+#section{
+	height: 400pt;
+	width: 80%;
+	float: right;
+}
+
+#footer{
+	height: 70pt;
+	clear : both;
+	overflow: hidden;
+}
+
+#section_sub1{
+	height: 20pt;
+	font-family: 'Caveat', cursive;
+	font-size: x-large;
+	text-shadow: 4px 2px 2px gray;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#section_sub2{
+	height: 230pt
+}
+
+#section_sub3{
+	height: 150pt
+}
+
+div .left{
+	width : 50%;
+	height: 230pt;
+	float: left;
+	overflow: hidden;
+}
+
+div .right{
+	width : 50%;
+	height: 230pt;
+	float: right;
+	overflow: hidden;
+}
+
+#img_insert{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#title{
+	font-size: xx-large;
+}
+
+#sub_title{
+	text-align: center;
+}
+
+.header_up2{
+	height: 50px;
+	color : rgb(255,0,255);
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: 'Architects Daughter', cursive;
+	overflow: hidden;
+	position: relative;
+	top: 20px;
+	
+}
+
+.header-down2{
+	height: 20pt;
+	text-align: center;
+	font-family: 'Baloo Tammudu 2', cursive;
+	overflow: hidden;
+}
+
+ ul > li{
+	list-style: none;
+	float:left;
+	margin-left: 20pt;
+	font-size: x-large;	
+	font-family: 'Caveat', cursive;
+	font-weight: bold;
+}
+
+a:hover{
+	color: pink;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+#footer_contents{
+	font-family: 'Caveat', cursive;
+	font-size: small;
+	margin-left: 141px;
+	margin-right: 630px;
+}
+
+.img_arrow{
+	width : 10px;
+	height : 10px;
+	float: right;
+	margin-right: 15px;
+    margin-top: 7px;
+}
+
+</style>
+
+
+</head>
+<body>
+	<div id="header">
+		<div class= header_left>
+			<div style="color: rgb(255,0,255); height: 70px; width:10% ; float: left; font-size: 53px; text-align: right; margin-top: 13px;overflow: hidden;font-family: 'Architects Daughter', cursive;">[</div>
+			<div style="height: 70px; width:80% ; float: left;overflow: hidden;">
+				<div class="header_up2">LAYER CAKE</div> 
+				<div class="header-down2">BAKERY + CAFE</div>      
+				</div>
+			<div style="color: rgb(255,0,255); height: 70px; width:10% ;float: left; font-size: 53px; text-align: left; margin-top: 13px ;overflow: hidden;font-family: 'Architects Daughter', cursive;">]</div>
+			</div>
+		<div class= header_right>
+			<ul>
+				<li><a href="#">HOME</a></li>			
+				<li><a href="#">Cake's History</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Contact us</a></li>			
+			</ul>
+		</div>
+	</div>
+	<div id="aside">
+		<div>
+		<a href="#">Cake's History</a>
+		<img class=img_arrow src="img/arrow.png">
+		<hr style="color: black; border-style: dashed;"></hr>
+		</div>
+		<div>
+		<a href="#">Cake's Origin</a>
+		<img class=img_arrow src="img/arrow.png">
+		<hr style="color: black; border-style: dashed"></hr>
+		</div>
+	</div>
+	<div id="section">
+		<div id="section_sub1">
+			Cakes's History
+		</div>
+		<div id="section_sub2">
+			<div>
+				<div class="left">
+					<p>
+					케이크의 기원은 신석기 시대에서 거슬러 올라간다. 최초의 케이크는 지금 우리가 알고있는 것과는 매우 달랐다.
+	      			그것은 밀가루에 꿀을 첨가해 단맛을 뺀, 빵에 가까운 음식이었고, 때로는 견과류나 말린 과일이 들어가기도 했다.
+	      			이것이 바로 케이크의 시조라 할만한 음식으로 알려져 있다.
+					</p>
+					
+					<p>
+					 이후 케이크는 이집트에서 빵 굽는 기술이 등장하면서 발전하기 시작했다. B.C 2000년경 이집트 인들은 이미 이스트를
+	      			 이용한 케이크를 만들기 시작했으며, 때문에 당시의 사람들은 이집트인들을 '빵을 먹는 사람'이라고 표현했다고 한다.
+	      			 당시의 회화나 조각작품들을 보면 밀가루로 빵 반죽하고 있는 모습을 종종 볼 수 있다. 이러한 이집트의 빵 중심의
+	      			 식문화는 그리스 로마로 전해져 케이크의 발전에 기여하게 된다. 그리스에서는 케이크의 종류가 100여종에 달했으며 로마에서는
+	      			 케이크가 빵으로부터 완전히 독립돼 빵 만드는 사람과 케이크를 만드는 사람이 구분되어 각각의 전문점과 직업 조합을 가지게 되었다.	
+					</p>
+				
+				
+				</div>
+				<div class="right">
+					<img id=img_insert src="img/cake.jpg">
+				</div>
+			</div>
+		</div>
+		<div id="section_sub3">
+			<p>
+			  우리가 알고 있는, 둥글고 윗부분이 아이싱 처리된 현대 케이크의 선구자격인 케이크는 17세기 중반 유럽에서 처음으로 구워지기 
+		      시작했다. 이것은 오분과 음식틀의 발전과 같은 기술발전, 그리고 정제된 설탕 등의 재료 수급이 원활해진 덕분에 가능했다. 그때에는
+		      케이크의 모양을 잡는 틀로 동그란 형태가 많이 쓰였으며, 이것이 현재까지 일반적인 케이크의 모양으로 굳어지게 되었다.
+		      이때 케이크 윗부분 모양을 내고자 하는 목적으로 설탕과 계란 흰자, 때때로 향료를 끓인 혼합물을 사용해 케이크 윗부분에 
+		      붓는 관습이 생겼는데, 이러한 재료들은 케이크 위에 부어져 오븐 속에서 다시 구워진 후에 딱딱하고 투명한 얼음처럼 
+		      변했기 때문에 이를 '아이싱'이라 부르게 되었다. 19세기 와서야 이스트 대신 베이킹 파우더와 정제된 하얀 밀가루를 넣은, 우리가
+		      알고 있는 현대적 케이크가 만들어지기 시작했다. 
+			</p>
+		
+		</div>
+	
+	</div>
+	<div id="footer">
+		<hr style="color: black;"></hr>
+		
+		<div style="width: 40%; height:70px ; float: left";>
+			<p style="text-align: center; float: right; font-family:'Caveat', cursive; font-size: small; margin-right: 2px">
+			All contents Copyright CakeWorld Inc. all right reserved<br>
+			Contact mail : CakeWorld@cakeworld.com Tel: +82 2 000 0000
+			</p>
+		</div>
+		
+		<div style="width: 40%; height:70px ; float: left; font-size: small; margin-top: 11px; margin-left: 11px;">
+			<img src="img/f.png" style="float: left; width:30px; height: 30px">
+			<img src="img/t.png" style="float: left; width:30px; height: 30px">
+		</div>
+		
+		  
+		<div style="width: 20%; height:70px ; float: left"></div>
+	</div>
+</body>
+</html>

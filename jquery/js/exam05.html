@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){   
+		
+		//이벤트를 추가하고 싶을 때 사용할 수 있는 함수 on
+		//여러개의 이벤트를 추가할 때 사용, on에는 함수가 아니라, 자바스크립트 객체가 날아옴!, key와 value를 가진!!
+		
+		$('input').on({
+			'keydown': function() {
+				$(this).css('color', 'orange')
+			}, 'keyup': function() {
+				$(this).css('color', 'black')
+			}, 'focus': function() {
+				$(this).css('border', '3px dotted red')
+				$(this).css('background-color', 'lightgray')
+			}, 'blur': function() {
+				$(this).css({
+					'border': '1px solid black',
+					'background-color': 'white'
+				})
+//				$(this).css('border', '1px solid black')
+//				$(this).css('background-color', 'white')
+			}
+		})
+		
+		
+		
+		/* $('input').keydown(function(){
+		
+			$(this).css('color', 'orange')
+		})
+		
+		$('input').keyup(function(){
+		
+			$(this).css('color','black')
+		})
+		
+		$('input').focus(function() { //커서 가져간 곳에 속성 추가
+		$(this).css('border', '3px dotted red')
+		$(this).css('background-color', 'lightgray')
+	})
+	
+	$('input').blur(function() {
+		$(this).css('border', '1px solid black')
+		$(this).css('background-color', 'white')
+	})
+	*/
+		
+		
+		
+		
+		
+		
+	})
+
+	
+</script>
+
+
+</head>
+
+<body>
+	이름 : <input type="text"><br>
+	전화번호 : <input type ="text"><br>
+	
+		
+
+</body>
+</html>

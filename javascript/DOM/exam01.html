@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	
+/* 	window.onload = function(){
+		setTimeout(function(){
+		document.write('<h1>JAVASCRIPT</h1>')
+			
+		}, 2000) //2초 경과 후 실행
+	
+	}    */    	
+	
+	window.onload = function(){
+		alert('innerText : ' + document.body.innerText) // 값만 추출
+		alert('innerHTML : ' + document.body.innerHTML) // 바디안에 들어있는 모든 태그까지 추출
+		
+		let list = ''
+		
+		list += '<ul>'
+		list += '<li>aaa</li>'
+		list += '<li>bbb</li>'
+		list += '<li>ccc</li>'
+		list += '</ul>'
+		
+//		document.body.innerText = list // 도큐먼트의 바디를 고칠 건 데, list로 고칠꺼야 => html의 태그로 인식하는게 아니라 기존의 문자열로 인식
+//		실제 수행하게되면.. 태그를 문자로 인식함, html태그로 인식하고싶다! 그럴때는? innerHTML로 넣으면 됨!
+		// innerText = list 이것처럼 그냥 값 대입은 그냥 문자열로만	
+		
+		document.body.innerHTML += list //원래 있는 내용에다가 붙이라고 할 때는 +=, 이거안하고 그냥 =하면 aaa bbb ccc만 나옴
+		
+		
+	}								  
+			
+									  
+	
+	
+
+</script>
+
+</head>
+<body>
+	    안녕하세요<br>
+		<h2>Hello</h2>
+</body>
+</html>

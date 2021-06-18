@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	//동적으로 태그를 추가시키고 싶다
+	
+	window.onload = function(){
+		let h1Tag = document.createElement('h1') //h1 태그 생성
+		let text = document.createTextNode('hello')
+		h1Tag.appendChild(text) // h1태그의 자식으로 text를 만들고 싶다!
+		console.log(h1Tag)
+//		console.log(text)
+		document.body.appendChild(h1Tag)
+		
+		// 이미지도 넣어보자
+		
+		let imgTag = document.createElement('img')
+		// src라는 속성을 넣어주기! 확인해보면 img에 src속성이 붙은 것을 확인할 수 있음
+		imgTag.setAttribute('src', 'https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png')
+//		console.log(imgTag)
+//		document.body.appendChild(imgTag)
+		
+		// a태그로 링크걸기
+		let aTag = document.createElement('a')
+		aTag.setAttribute('href',"https://daum.net")
+		aTag.target = '_blank'  // setAttribute 사용해서 만들어됨 
+//		console.log(aTag)
+		aTag.appendChild(imgTag) //a태그의 자식으로 img태그가 들어가야함
+		document.body.appendChild(aTag)
+		
+	}
+	
+
+</script>
+
+</head>
+<body>
+
+	<!-- <h1>Hello</h1>
+	<img src= "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">   -->
+	<!--  <a href="http://www.daum.net"> <img src= "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png"></a>  a태그 자식으로 img태그로 다음링크를 걸어보자--> 
+</body>
+</html>

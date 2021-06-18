@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	
+window.onload = function(){
+	
+	let divTag = document.getElementById("div01")
+	let h1Tag = document.getElementById("h01")
+	let spanTag = document.getElementById("span01")
+	
+	
+	divTag.onclick =function(){
+		alert('div click...')
+	}
+	
+	
+	h1Tag.onclick = function(e){  // 이벤트를 인자로?
+		alert('h1 click...')      // h1에서 버블링을 그만두게 해보자(div로 안가도록)
+		console.log(e)	
+	
+		//e = e || window.event
+	
+		// 이벤트 버블링 무효화
+		e.cancelBubble = true
+	}
+	
+	
+	spanTag.onclick = function(){  // span만 눌렀는데, 부모(span->h1->div)를 따라가면서 클릭 이벤트 자동 호출, 이것이 이벤트 버블링
+		alert('span click...')	// 반대로 자식 -> 부모 이벤트 호출도 됨, 이렇게 자동호출 되는게 좋은건 아니지..
+	}
+	
+}
+
+
+	
+	
+
+</script>
+
+</head>
+<body>
+	
+	<div id ="div01">
+		<h1 id="h01">
+			<span id="span01">안녕하세요</span>
+		</h1>
+	</div>
+
+</body>
+</html>

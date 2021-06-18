@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+
+	let inputNum = prompt("10~100사이의 수를 입력하세요.")
+			
+	let arr = []
+	
+	for(let i=1; i<=inputNum; i++){
+		arr[i-1] = i
+	}
+	
+	for(let i=0; i< arr.length; i++){
+		let str =''
+		let x = parseInt(arr[i] / 10)  //십의 자리
+		let y = parseInt(arr[i] % 10)  //일의 자리, parseInt 안쓰니까 일의 자리 인식 못했음
+		
+		 if( (x == 3|| x == 6 || x == 9) || ( y == 3 || y == 6 || y == 9) ) {
+			 
+			str = '짝'  // 30이면, 짝뽀뽀뽀숑
+			
+			if(parseInt(arr[i] % 10) == 0){
+				let num = parseInt(arr[i] / 10)
+				for(let j=0; j < num ; j++){
+					str += '뽀'
+				}
+				str += '숑'
+		}
+				if( (x == 3|| x == 6 || x == 9) && ( y == 3 || y == 6 || y == 9) ){
+					str += '짝'
+				}
+			
+			arr[i] = str
+			
+		
+		} // 일의 자리, 십의 자리 모두 3 6 9를 포함하지 않는 경우
+		
+		if(parseInt(arr[i] % 10) == 0){ //40, 50처럼 3,6,9를 포함하지 않은 수
+			let num = parseInt(arr[i] / 10)
+			//str = '' // str을 다시 선언해주지 않으니까 undefined가 붙어서 출력됨
+			for(let j=0; j < num ; j++){
+				str += '뽀'
+			}
+			str += '숑'
+			arr[i] = str
+		}
+		document.write(arr[i] + '<br>')
+	}
+
+		
+	 
+	
+	
+	
+	
+	
+	
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

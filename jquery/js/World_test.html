@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<style>
+
+
+	body{
+		/* 배경을 세계지도로 지정하고, 위치를 나타내고 싶은 부분에 화살표 이미지로 놓고, 이부분에 tooltip으로 시간 표시  */
+		background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjZfMzcg/MDAxNTgyNjk3ODU3MTkw.6r6HbR0G8n9D6SFCjIqyRyO8h0PsDxvPpDB_8uIuY0Ag.0inDk2A1-vXIwX71czc4GeqqjVwgX6fEQL8cp2iBZT0g.JPEG.naverschool/GettyImages-1158860187.jpg?type=w800");
+		
+		/* margin-top : 500px; */
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 500px;
+		background-repeat: no-repeat;
+		background-position: center;
+		min-height: 100%;
+			
+	}
+
+	div{
+		
+		position : absolute;
+		/* background-color: blue; */
+		
+		margin-left :0px;
+		margin-top: 0px;
+		
+ 		
+		width : 100px;
+		height: 100px;
+		
+		/* x : 558 y: 50인 위치에 div 만들기*/
+	}
+	
+	
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	
+
+</style>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		
+		$('div').click(function(event){
+			let x = event.pageX;
+			let y = event.pageY;
+			alert('x좌표 : ' + x +', y좌표 : ' + y)
+		})
+		
+		
+		
+		
+	})
+
+
+</script>
+
+
+</head>
+
+
+<body>
+	<div>
+	<img src="/Lecture-Web/css/images/강아지.jpg">
+	</div>
+
+
+
+
+</body>
+</html>

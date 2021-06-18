@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+/*
+입력받는 것은 prompt
+
+이름을 입력하세요 : 홍길동
+나이를 입력하세요 : 27
+홍길동의 10년 후의 나이는 37세 입니다.
+계속하시겠습니까? <- Y
+		
+이름을 입력하세요 : 홍길동
+나이를 입력하세요 : 53
+홍길동의 10년 후의 나이는 63세 입니다.
+계속하시겠습니까? <- N
+				
+총 2번 수행했습니다.
+*/
+
+let name
+let age
+let cnt = 0
+// let으로 cnt를 만들 때, 0으로 해주면 nan 오류가 발생하지 않았음, 데이터 형식을 명확히 지정함
+
+while(true){
+	name = prompt("이름을 입력하세요")
+	age = prompt("나이를 입력하세요")
+	age = Number(age)
+	document.write(name + "의 10년 후의 나이는 " + (age+10)+"세 입니다. <br/>")
+	input= confirm('계속 하시겠습니까?')  // 계속하시겠습니까?
+	cnt++
+	if(!input){
+		break
+	}
+}document.write("<br/> 총" + cnt + "번 수행했습니다.")
+
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

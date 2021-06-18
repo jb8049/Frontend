@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	// alert(`a : ${a}, b : ${b}`)
+	
+	// let은 호이스팅(밑에서 만든거 올려주는 것)이 안됨, let으로 지역변수 형태로 사용가능
+	let a = 10
+	let b = 20
+	const data = 'hello' // 상수값 형태로만 사용할 수 있음, 고정값
+	alert(`a : ${a}, b : ${b}`)
+	alert(`data : ${data}`)
+	
+	a = 100
+	// data = '안녕하세요' // 오류 발생!!!
+	
+	alert(`a : ${ a }, b : ${ b }`)
+	alert(`data : ${data}`)
+	{
+		let a = 30
+		let c = 50
+		alert(`a : ${a}, b : ${b}, c : ${c}`)
+	}
+	
+	// 아까 var처럼 되지 않는다 블록 스코프O, 그래서 let을 사용함
+	// c를 추가하니까 c라는 변수를 선언하지 않았다고 에러남
+	alert(`a : ${a}, b : ${b}, c : ${c}`)
+	
+</script>
+</head>
+
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	
+	$(document).ready(function() {
+		
+		alert('!!!')
+	//	$('ul li').hide() // ul의 후손들 중에서 li 태그들을 숨겨라
+	//	$('ul li:first').hide()  // 호랑이만 지워지네???, ul의 li들을 모두 하나로 봐서, 예를 들어 배열로 만들어서 0번째만 지움..
+	//	$('ul li:first-child').hide()  // first-child로 각 그룹의 첫 번째 요소에 접근할 수 있음!
+	//	$('ul li:last-child').hide()
+	
+	//	$('a[target]').hide()
+	//	$('a[href="http://www.naver.com"]').hide()
+	
+	// input 태그 중 타입이 button 인 것 지워보자
+	//	$('input[type=button]').hide()
+	//	$('input:button').hide()
+		
+	//  두 개 모두 지우는 것, type을 표현하는게 ':'
+	//	$(':button').hide()
+		
+	//  버튼2 만 지워짐, type을 표현하는게 ':'
+	//	$('button').hide()
+	
+	
+	
+
+	$(':button').click(function(){  // 두 버튼 중 아무거나 클릭하면, h2 태그 모두 삭제
+	
+	//		$('h2').hide()
+	//		$(this).hide()  //클릭한 버튼을 지워줘!
+			$(this).hide('drop', {direction:'down' },"slow") //위에 script추가해줬음
+		})
+
+	})
+	
+	 	
+
+	
+</script>
+
+
+</head>
+
+<body>
+	
+	<h2>button 전</h2>
+	<input type = "button" value="버튼1">
+	<button>버튼2</button>  <!-- type=button이 생략된 것 -->
+	<h2>button 후</h2>
+	
+	<h2>a Tag 전</h2>
+	<a href="http://www.naver.com">네이버</a>
+	<a href="http://www.daum.net" target="_blank">다음</a>
+	<h2>a Tag 후</h2>
+
+
+	<h1>동물종류</h1>
+	<ul>
+		<li>호랑이</li>
+		<li>늑대</li>
+		<li>코끼리</li>
+		<li>여우</li>
+	</ul>
+	
+	<h1>음식종류</h1>
+	<ul>
+		<li>김밥</li>
+		<li>냉면</li>
+		<li>초밥</li>
+		<li>돈까스</li>
+		<li>카레</li>
+	</ul>
+
+</body>
+</html>

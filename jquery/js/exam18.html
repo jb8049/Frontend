@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	body * {   /* body 아래의 모든 태그들에 적용  */
+		display : block;
+		border : 2px solid red;
+		padding : 10px;
+		margin :  10px;
+	}
+</style>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+
+$(document).ready(function() {
+		
+	
+		//  $('h2').siblings().css('border', '2px solid blue') // 형제들을 의미함, 같은 레벨에 있는 것들이 형제
+		//  $('h2').siblings('h3').css('border', '2px solid blue') // 형제들 중 h3 태그만
+		//	$('h2').next().css('border', '2px solid blue')  // h2의 다음 태그
+		//	$('h2').prev().css('border', '2px solid blue')  // h2의 이전 태그
+		//	$('h1').nextUntil('p').css('border', '2px solid blue')  //h1 기준으로 p태그의 전까지
+			
+		//	$('h1').prevAll().css('border', '2px solid blue')
+			
+		//	$('p').eq(1).css('border', '2px solid blue') 
+			
+		//	$('div > * ').eq(5).css('border', '2px solid blue')  //div의 모든 자식들(div의 바로 아래 레벨)
+			
+			
+		//	$('div > * ').not('p').css('border', '2px solid blue')
+			
+		//	$('div > *').find('p').css('border', '2px solid blue') // 바뀌길 예상하는 것과 다르게 나옴..
+			// find 라는 것은 선택자$('div > *')를 기준으로 그 밑에 있는 후손들 중에서 찾는 것, 하위 요소 중 p태그를 찾는 것
+			// 후손들 중에서 p태그니까!! p1-1-1만 걸림, 원하는 갑을 얻으려면 filter
+			
+			
+		// 선택된 애들을 대상으로 필터링을 하는 것 (원하는 결과를 얻을 수 있음)
+		   $('div > *').filter('p').css('border', '2px solid blue')
+			
+	})
+</script>
+
+
+</head>
+<body>
+
+	<div>div1
+		<p>p1-1</p>
+		<span>span </span>
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3<p>p1-1-1</p></h3>
+		<p>p1-2</p>
+	</div>
+	
+	<div>div2
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p2-1</p>	
+	</div>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

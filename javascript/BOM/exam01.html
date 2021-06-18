@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+
+/* 
+	BOM (브라우저 객체 모델)
+	-window : 브라우저의 최상의 객체
+		-location
+		-screen 브라우저창을 크게, 작게 할 수 있는 것과 관련
+		-history 앞/뒤로 가기와 관련
+		-document 
+		-navigator
+*/
+
+
+	window.alert('hello')
+	
+	let sub = window.open("","","width = 500, height =400")
+	if(!sub){
+		alert("팝업창 옵션을 확인하세요")
+	}
+	
+	sub.moveTo(500,500) //절대 위치에서 100씩 이동
+	
+	
+	let pid = setInterval(function(){
+		sub.moveBy(10,10)
+	},1000)
+	
+	let width = screen.width // 전체 화면으로 지정하는 screen
+	let height = screen.height
+	
+	setTimeout(function(){ // 해당 하는 시간이 지나면, 함수들을 실행함
+		clearInterval(pid); // 5초지나면 pid 정지시킴
+		sub.resizeTo(width, height) //sub를 전체화면으로
+	},5000)
+	
+
+</script>
+
+
+</head>
+<body>
+	
+	
+	
+</body>
+</html>

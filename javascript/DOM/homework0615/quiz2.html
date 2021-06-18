@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	
+	window.onload = function() { // body가 실행된 후 실행됨
+		
+		let h1Tag = document.createElement('h1')
+		let i = 0
+		let text = document.createTextNode(i + '번 클릭함')
+
+		h1Tag.appendChild(text)
+		document.body.appendChild(h1Tag)
+		
+		
+		document.getElementById("click").onclick = function(){ // id가 click인 것을 클릭(onclick) 하면
+															   // 함수 실행
+			alert("클릭하셨습니다.")
+			h1Tag.innerText = (++i + '번 클릭함'); //업데이트하는 거니까 innerText(태그의 내용을 얻음), 전위증가 
+		}
+	
+	}
+
+</script>
+
+</head>
+<body>
+
+	<input type = "button" value= "클릭" id ="click">
+	
+	
+</body>
+</html>

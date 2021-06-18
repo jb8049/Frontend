@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	div{
+		border : 1px solid red
+	}
+	
+	.red{
+		color : red;
+	}
+	.blue{
+		color : blue;
+	}
+
+	.backGray{
+		background-color: gray;
+	
+	}
+	
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	
+	$(document).ready(function(){
+		
+		$('p').addClass('red') //클래스를 추가할 때 사용하는 red 클래스
+		$('#id01').addClass('blue backGray')
+		$('.c01').removeClass('red')
+		
+		
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	<div>
+		<p id="id01">나는 홍길동이다</p>
+		<mark class="c01">나는 김길동이다</mark><br>
+		나는 고길동이다<br>
+		<p class="c01">나는 한길동이다</p>
+	</div>
+	<p id="id02">나는 박길동이다</p>
+	<button>삭제</button>		
+
+	
+</body>
+</html>

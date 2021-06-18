@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	function increaseBtn(){
+		let tag = document.getElementById("spanCount")
+		tag.innerText = parseInt(tag.innerText) + 1 //tag가 가지고 있는 내용 업데이트 innerText
+	}
+	
+	
+
+
+</script>
+
+</head>
+<body>
+<!--내용중의 일부분만 수정하고 싶을 때 span, 인라인 태그의 span태그를 사용하는게 이 문제의 핵심이었음!-->
+	<span id = "spanCount">0</span>번 클릭
+	<input type ="button" value ="클릭" onclick="increaseBtn()">
+
+</body>
+</html>

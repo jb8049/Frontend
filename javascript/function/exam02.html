@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function func(){
+		// alert('call()')
+		// 함수의 매개변수와 관련있는 arguments
+		console.log(arguments) 
+		
+		switch(arguments.length){
+		
+		case 0 :
+			alert('call...')
+			break;
+		case 1 :
+			alert('data : ' + arguments[0])
+			break;
+		case 2 : 
+			alert(`no : ${ arguments[0]}, msg : ${ arguments[1]}`)
+	
+		
+		}
+	
+		
+	}
+// 인자가 0개 1개 2개든 간에 그냥 func (마지막에 있는 함수)가 호출됨
+//	func() // 개발자도구 들어가보면, arguments가 0인 것 확인 가능
+//	func('A')
+	func(12, 'hello')
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

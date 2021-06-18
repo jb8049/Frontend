@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+
+	window.onload = function(){
+		
+		
+		
+		
+	}
+
+	
+	
+
+</script>
+
+</head>
+<body>
+	<!--클라이언트가 자신이 가지고 있던 임의의 값들을 서버쪽에 전달하고 싶다!!  -->
+	<!-- 사용자가 입력한 정보를 서버쪽에 전달하는게 목적인 form태그!!, 야 내가 원하는 정보 줘~ action -->
+	<!-- action="exam08.html?  여기서 ?는 사용자가 입력한 데이터를 전달하겠다는 것!-->
+	<!-- 그런데 아이디, 패스워드, 패스워드 확인 전달하고 싶은 게 3가지 인데.. 이거를 구분할 수 있을까? => name이라는 속성 사용!! -->
+	<!-- 입력을 받으려면 반드시 name 속성을 사용해야함!!! -->
+	<!-- 그런데 만약 id만 입력하고, pwd, pwdCheck를 입력하지 않는다면..? empty가 전달되는데.. 필수항목으로 만들어야함 -->
+	<!-- 자바스크립트 사용하지 않고도, required 속성으로 처리할 수 있음.. 정적인 html에서.. 그런데 pwd와 pwdCheck가 같은지는 알 수 없음 -->
+	<!-- required 사용하지 않고, 자바스크립트를 사용해서 처리해보자 exam10 -->
+	
+	
+	<form action="exam08.html?id=aaa & pwd=123 & pwdCheck=123">
+		아이디 : <input type="text" name="id"><br>
+		패스워드 : <input type="password" name="pwd"><br>
+		패스워드 확인 : <input type="password" name = "pwdCheck"><br>
+		<input type="submit" value ="전송">
+	</form>
+
+</body>
+</html>

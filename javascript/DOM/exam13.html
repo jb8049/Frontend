@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+
+	function clickBtn(data){
+		let monitor = document.getElementById("monitor")
+		if(data != '=') //전달받는 value가 '='인 경우는 제외하고
+			monitor.value += data //계산창에 추가
+		else{
+			monitor.value = eval(monitor.value)  // 코드 실행 함수 eval
+			// eval의 인자는 문자열임, 인자의 자바스크립트를 실행한다
+		}
+			
+	}
+	
+	
+
+
+</script>
+
+</head>
+<body>
+	<!-- 계산기에서 가장 중요한 포인트는 this*** -->
+	<input type="text" id="monitor"><br>
+	<button value="1" onclick="clickBtn(this.value)">1</button>
+	<button value="2" onclick="clickBtn(this.value)">2</button>
+	<button value="3" onclick="clickBtn(this.value)">3</button>
+	<button value="4" onclick="clickBtn(this.value)">4</button>
+	<button value="5" onclick="clickBtn(this.value)">5</button>
+	<button value="6" onclick="clickBtn(this.value)">6</button>
+	<button value="7" onclick="clickBtn(this.value)">7</button>
+	<button value="8" onclick="clickBtn(this.value)">8</button>
+	<button value="9" onclick="clickBtn(this.value)">9</button>
+	<button value="+" onclick="clickBtn(this.value)">+</button>
+	<button value="-" onclick="clickBtn(this.value)">-</button>
+	<button value="*" onclick="clickBtn(this.value)">*</button>
+	<button value="/" onclick="clickBtn(this.value)">/</button>
+	<button value="=" onclick="clickBtn(this.value)">=</button>
+	
+</body>
+</html>

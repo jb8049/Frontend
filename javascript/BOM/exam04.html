@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+//이미 만들어진 body의 내용을 제어하는게 script의 목적임
+//body의 내용이 읽어진 다음에 자바스크립트 제어를 하고싶다!! 그러기 위해 만들어진게 '온로드', body의 내용이 다끝나고 난 다음에 호출되는 것
+	
+	function autoCall(){ //body가 모두 출력된 뒤에 실행
+	
+	alert('로드 완료...')
+}
+	
+	window.onload =function(){
+		alert('윈도우 로드 완료...') //body가 모두 출력된 뒤에 실행, body의 onload 주석처리하고.. (body 온로드와 같이 사용될 수 없음!)
+								//body에 있는 내용들을 사용할 수 있게됨!!
+	}
+</script>
+
+
+</head>
+		<!-- onload="autoCall()"> '온로드', on이라는 키워드는 ~가 발생했다면, 화면에 모두 뿌려주었다면~ -->
+<body>
+	<h2>Hello</h2>
+	<h1>Hi</h1>	
+	<img src= "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+	<img src= "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+	<img src= "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+	<img src= "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+			
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<!-- <script src="js/jquery-3.6.0.min.js"></script>  -->
+
+<!-- <script src= "/Lecture-Web/jquery/js/jquery-3.6.0.min.js"></script>  -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+
+	
+	
+	$(document).ready(function(){   // document가 준비되면, 이 함수를 실행해 (콜백함수)
+									// document에 있는 태그들을 제어하기 위한 목적!! => DOM 구조!(문서객체모델)
+									// DOM을 제어하기 위함
+		alert('ready...')
+	})
+	
+	// 이 2개가 순차적으로 실행된다는 보장은 없다! 그렇지만 일반적으로 같은 함수는 여러 개 있으면 마지막꺼 하나 실행하지만.. 이거는
+	// 2개가 다 실행됨 (순차적 x)
+	$(document).ready(function(){    // document가 준비되면, 이 함수를 실행해 (콜백함수)
+		alert('ready2...')
+	})
+	
+//	$(document).ready를 => $() 이렇게 줄일 수 있음!
+	$(function(){
+		alert('ready3...')
+	})
+	
+// 윈도우 온로드도 당연 사용 가능
+
+	
+</script>
+
+
+</head>
+
+<body>
+
+</body>
+</html>

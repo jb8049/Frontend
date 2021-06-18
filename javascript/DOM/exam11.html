@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function showInfo() { // window.onload 안쓰고도 잘되는데?? 이 함수를 실행하고 있다는 얘기는 body 내용이 다나와야함
+		// 함수는 window.onload 안에 있을 필요없다!
+		// 함수가 호출된다는 얘기는 버튼을 클릭했다는 것-버튼을 클릭했다는 건 웹브라우저에 버튼이 보인다는 것
+		// function을 통해 하는게 아니라, 음악감상의 값을 뽑아오고 싶었다면, 이거는 window.onload 안에 있어야함
+		// document.inputForm.hobby[0].value inputForm이 만들어진지 모르니까! window.onload 안에
+// document.inputForm.hobby[0]=첫 번째 태그, document.inputForm.hobby[1]= 두 번째 태그, document.inputForm.hobby[2]= 세 번째 태그
+		let f = document.inputForm
+		let msg = ''
+		for (let i = 0; i < f.hobby.length; i++) { // 몇 개가 입력된지 모르니까 전체를 다돌림
+			if (f.hobby[i].checked) {
+				msg += f.hobby[i].value + '\n' // value는 뮤직 리딩~
+			}
+		}
+
+		alert(msg)
+	}
+
+	/* 	function selectAll(){   //document.inputForm.hobby[0].checked= true 이렇게 모든 체크를 true로 변경
+	
+	 let length = document.inputForm.hobby.length
+	
+	 for(let i = 0; i < length; i++){
+	 document.inputForm.hobby[i].checked = true
+	 }
+	
+	 } */
+/*	 function deselectAll(){   //위와 동일
+	
+	 let length = document.inputForm.hobby.length
+	
+	 for(let i = 0; i < length; i++){
+	 document.inputForm.hobby[i].checked = false
+	 }
+	
+	 } */
+
+	// 하나의 함수로 전체 선택 / 전체 취소
+	/* 	function toggle(check){   //위와 동일
+	
+	 let length = document.inputForm.hobby.length
+	
+	 for(let i = 0; i < length; i++){
+	 document.inputForm.hobby[i].checked = check
+	 }
+	 } */
+
+	function toggle() {
+
+		let hobby = document.inputForm.hobby
+		let cnt = hobby.length
+ 		//모두다 체크가된 경우만 0임, 나머지는 1,2,3,4임 => 하나라도 체크가 된 경우는 true
+ 		//cnt가 0이 아닌 경우는 true다!, 우리가 궁금한 것은 0임
+		for (let i = 0; i < hobby.length && hobby[i].checked; i++) {
+			cnt--
+		}
+		console.log(!cnt)
+		
+		for (let i = 0; i < hobby.length; i++) {
+			hobby[i].checked = Boolean(cnt)
+		}
+		
+/* 		let check = true // 체크
+		let hobby = document.inputForm.hobby
+		let cnt = 0 
+	
+		// hobby[i].checked이 조건을 만족하면!이니까 해당 배열이 체크가 되어있으면,
+		
+		for (let i = 0; i < hobby.length && hobby[i].checked; i++) { 
+			cnt++
+		}
+		if (cnt == hobby.length)
+			check = false //체크해제
+
+		for (let i = 0; i < hobby.length; i++) {
+			hobby[i].checked = check
+		} */
+		
+	}
+</script>
+
+</head>
+<body>
+
+
+	<form name="inputForm">
+		당신의 취미는?<br>
+		<!-- 같은 그룹으로 묶기 위해서는 name이 같아야한다 -->
+		<input type='checkbox' name="hobby" value="music">음악감상<br> <!-- name이 hobby는 배열로 저장되어있음  -->
+		<input type='checkbox' name="hobby" value="movie">영화감상<br>
+		<!-- 근데 무엇을 클릭했는지 모르는데? on으로 전달됨-->
+		<input type='checkbox' name="hobby" value="reading">독서<br>
+		<!--그래서 라디오박스나 체크박스는 value를 정의해야함-->
+
+		<input type="button" value="결과보기" onclick="showInfo()">
+
+		<!-- 	<input type='button' value="전체선택" onclick = "selectAll()">
+		<input type='button' value="전체해제" onclick = "deselectAll()"> -->
+
+		<!-- toggle 함수로 함수 간단하게 -->
+		<!-- 		<input type='button' value="전체선택" onclick = "toggle(true)">
+		<input type='button' value="전체해제" onclick = "toggle(false)"> -->
+
+		<input type='button' value="전체선택/해제" onclick="toggle()">
+
+
+	</form>
+
+</body>
+</html>

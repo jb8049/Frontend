@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+body{
+	font-size: 0
+}
+
+.divClass{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	top: 100px;
+	font-size: large;
+	font-weight: bold;
+	line-height: 100px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+</style>
+
+<script src="../jquery-3.6.0.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		let dayWeek = ""
+	
+		$('div').hover(function(){
+			
+			dayWeek = $(this)[0].innerText  // 월
+			fullDayWeek = $(this)[0].innerText + "요일" // 월요일
+
+			$(this)[0].innerText = fullDayWeek
+			
+			$(this).animate({
+				'height' : '200px',
+				'width' : '200px',
+				'line-height': '200px',
+			})
+
+		}, function(){
+			
+			$(this)[0].innerText = dayWeek  // 위에서 저장된 해당 요일을 넣어줌
+			$(this).animate({
+				'height' : '100px',
+				'width' : '100px',
+				'line-height': '100px',
+			})
+
+		})
+
+	})
+</script>
+</head>
+
+
+<body>
+	<div class="divClass" style="background-color: red">월</div>
+	<div class="divClass" style="background-color: yellow">화</div>
+	<div class="divClass" style="background-color: green">수</div>
+	<div class="divClass" style="background-color: gray">목</div>
+	<div class="divClass" style="background-color: navy">금</div>
+	<div class="divClass" style="background-color: purple">토</div>
+	<div class="divClass" style="background-color: blue">일</div>
+</body>
+</html>

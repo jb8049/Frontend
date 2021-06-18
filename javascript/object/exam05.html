@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script>
+	
+	function Person(name,phone,addr){
+		
+		this.name = name
+		this.phone = phone
+		this.addr = addr
+	}
+	
+	Person.prototype.info = function(){ // info를 프로토타입으로 만들기
+		let msg = ''
+			for(let key in this){
+					msg += key + ' : ' + this[key] + '\n'
+			}		
+			alert(msg)
+	}
+	
+	let person = new Person('홍길동', '010-1111-2222','경기도 광명시')
+	person.info()
+	
+	let person2 = new Person('홍길순', '010-3333-4444','서울시 서초구')
+	person2.info()
+	
+	console.log(person) // 둘다 프로토타입에 info를 가지고 있음
+	console.log(person2)
+	
+/* 	Person.prototype.info = function(){
+		alert('change...')
+	} */
+	
+	Person.prototype.num = 100;
+	
+	let person3 = new Person('고길동', '010-5555-6666','경기도 용인시')
+	person3.info()
+	
+//	person3.num--;  // 이렇게 하면 객체의 멤버변수가 추가된다..
+//	person2.num = 20;
+	
+	//하나의 값을 공유하고 있기 때문에 person도 person3과 같이 change...로 변경됨
+	person.info()
+	
+	
+	console.log(person)
+	console.log(person2)
+	console.log(person3)
+	
+	
+</script>
+
+</head>
+
+
+
+
+<body>
+
+</body>
+</html>

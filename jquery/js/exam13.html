@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+
+
+	
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		$('#btn01').click(function(){
+			
+			
+			$('p').text('문장이 변환되었습니다.</mark>') // 이렇게 하면 문자열 그대로 들어감, 효과 적용 안됨
+			
+			
+			/* let pTags = document.getElementByTagName("p")
+			for(let i =0 ; i < pTags.length; i++){
+				pTags[i].innerText = '문장이 변환되었습니다.'
+			} 이것을 j쿼리로 해보자!! */
+				
+		})
+		
+		$('#btn02').click(function(){
+			
+			$('p').html('<mark>문장이 변환되었습니다.</mark>')
+			
+		})
+		
+		$('#btm03').click(function(){  // href에 대한 속성값을 변경해주어야함
+			
+
+			$('a').attr('href', 'http://www.naver.com')
+			$('a').attr('target', '_blank')
+			
+			/* document.querySelector('a').setAttribute('href', 'http://www.naver.com')
+			document.querySelector('a').href='http://www.naver.com' */
+
+		})
+		
+		$('#btn04').click(function(){
+			
+			
+		/*  $('p').eq(0).html('<strong> 0 : 문장변환</strong> ')  // 전체가 아니라, 특정 태그에 접근
+			$('p').eq(1).html('<strong> 1 : 문장변환</strong> ')  */
+			
+			
+			
+			
+			
+			// p 태그가 가진 값이 여러 개니까 함수를 호출하자
+			$('p').html(function(index,html){
+				
+				//console.log(arguments)  찍어보니까 2개가 들어가는데 첫 번째는 인덱스, 두 번째는 데이터(각각이 원래 가지고 있는 html 문장) index,html 인자를 넣자
+				
+				return "<strong>" + index + " : 문장변환</strong>" //리턴했는데 왜 값이 변경되는 거지?
+				
+			})
+			
+			$('p').text(function(index, html){  // $('p').eq(0).html('<strong> 0 : 문장변환</strong> ')  이것과 동일함, 반환되는 값이 html 값
+				return "<strong>" + index + " : 문장변환</strong>"
+				
+				
+			})
+			
+			
+			
+			
+			
+			
+			/*
+			let pTags = document.getElementsByTagName("p")
+			
+			for(let i in pTags){
+				pTags[i].innerHTML = '<strong>' + i + ' : 문장변환'
+			}
+			*/
+		})
+		
+		
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+
+	<a href="http://www.daum.net">사이트 이동</a>
+	
+	<p>첫 번째 문장입니다.</p>
+	<p>두 번째 문장입니다.</p>
+	<button id="btn01">TEXT변환</button>
+	<button id="btn02">HTML변환</button>
+	<button id="btn03">주소변환</button>
+	<button id="btn04">문장변환</button>
+</body>
+</html>

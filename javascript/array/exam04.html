@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	let state = new Array()
+	
+//	state[0] = '서울'
+//	state[1] = '부산'
+	
+	state['서초'] = '서울특별시' // 인덱스로 문자열을 사용할 수 있음, 임의의 key값을 가진 형태로 데이터를 삽입할 수 있음
+	state['광명'] = '경기도'
+	state['동래'] = '부산광역시'
+	
+	for(let i in state) {
+		document.write(i + " : " + state[i] + "<br>")
+	}
+	
+	document.write('<hr>')
+	
+	let p = []
+	p['name'] = '홍길동'
+	p['phone'] = '010-1111-2222'
+	
+	for(let key in p){
+		document.write(key + " : " + p[key] + '<br>') 
+	}
+	
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

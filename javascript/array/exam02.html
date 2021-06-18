@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+	//배열이 가지고 있는 요소에 모두 접근하는게 목적, 반복문을 이용해서 접근하자
+
+ 	let names = ['윤길동','홍길동', '강길동','박길동','구길동']
+ 	document.write(names + '<br>')
+ 	
+ 	document.write('<br>')
+ 	
+ 	for(let index = 0; index < names.length; index++){
+ 		document.write(names[index]+'<br>')
+ 		
+ 		
+ 		// 실행 후 f12누르면 나옴
+ 		console.log(names[index])
+ 	}
+	
+ 	document.write('<br>')
+	
+	// i가 인덱스임, names 배열이 가지고 있는 모든 값을 출력
+	for(let i in names){	
+	//	document.write(i + '<br>')
+		document.write(names[i] + '<br>')
+	}
+ 	
+ 	document.write('<br>')
+	
+	//  names 배열의 개수 만큼 돌면서 name에다가 넣는다
+	for(let name of names){
+		document.write(name + '<br>')
+	//	document.write(` ${ name }<br>`)
+	}
+	
+		
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

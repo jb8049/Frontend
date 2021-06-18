@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://localhost:9999/Lecture-Web/jquery/js/exam12.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Insert title here</title>
+
+<style>
+
+	div {
+	
+		width : 100px;
+		height : 100px;
+		background-color: red;
+		position : absolute;
+	}
+	
+
+	
+</style>
+
+<script src="./Insert title here_files/jquery-3.6.0.min.js.다운로드"></script>
+
+
+
+<script>
+	
+	
+	
+	
+	$(document).ready(function(){
+	
+		/* let pTags = document.getElementsByTagName("p")
+		
+		alert(pTags[0].innerHTML)
+		alert(pTags[0].innerText) */
+	
+		let html = $('p').html()
+		let text = $('p').text()
+		
+		alert('innerHTML' +  html)
+		alert('innerText' + text)
+
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	<p>내 이름은 <strong>홍길동</strong>이고, 별명은 <em>의적</em>입니다</p>	
+	
+
+</body></html>

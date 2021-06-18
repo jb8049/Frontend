@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	div{
+		border : 1px solid red
+	}
+
+	
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	
+	$(document).ready(function(){
+		
+		$('button').click(function(){
+			
+		//	$('p').remove()
+		
+		//	$('div').remove() // div를 포함해서 지우는 것!
+		//	$('div').empty()  // div의 자식들을 다 지우는 것(div는 가만히 있고!)
+		
+		//	$('p.c01').remove() //한길동만 지워짐
+		//	$('p').remove('.c01')
+			
+		//	$('p.c01').remove()
+		//	$('p#id02').remove()
+			$('p').remove('.c01, #id02') //선택을 여러개해서 지울 수 있다!!
+		})
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	<div>
+		<p id="id01">나는 홍길동이다</p>
+		<mark class="c01">나는 김길동이다</mark><br>
+		나는 고길동이다<br>
+		<p class="c01">나는 한길동이다</p>
+	</div>
+	<p id="id02">나는 박길동이다</p>
+	<button>삭제</button>		
+
+	
+</body>
+</html>

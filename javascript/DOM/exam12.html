@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>   //이거 작동잘 안되니까 교수님꺼 참고하기
+		function checkForm(){
+			let form = document.searchForm
+			
+//			if(form.searchType.value == ''){
+			if(form.searchType.selectedIndex == 0){
+				alert('검색항목을 선택하세요.')
+				//여기를 빼먹은거야 라고 커서를 위치로
+				form.searchType.focus()
+				return false
+			}
+			
+			let words =["","제목","작성자"]
+			
+			if(form.searchWord.value == ''){
+				//alert('검색어를 입력하세요')
+				alert("검색할" + words[form.seacrchType.selectedIndex] + '을(를) 입력하세요.')
+				form.searchWord.focus()
+				return false
+			}
+			
+			
+			return true //모든 조건 통과하면 가능하도록 함
+		}
+</script>
+
+</head>
+<body>
+	<form name="searchForm" onsubmit="return checkForm()">
+		<select name="searchType">
+			<option value="">선택하시오</option>
+			<option value="title">제목</option>    
+			<option value="writer">작성자</option>
+		</select>
+		<input type = "text" name="searchWord">
+		<input type = "submit" value="검색">
+	</form>
+
+</body>
+</html>

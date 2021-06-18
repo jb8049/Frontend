@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	div {
+	
+		width : 100px;
+		height : 100px;
+		background-color: red;
+		position : absolute;
+	}
+	
+
+	
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	$(document).ready(function(){
+	
+		$('div').animate({	
+			width : '200px',
+		})
+		
+		$('div').animate({
+			left : '100px',
+			opacity : '0.3'
+		})
+		
+		$('div').animate({
+			width : '100px',
+			height : '200px',
+			opacity : '0.7'
+		},3000)
+		
+		$('div').animate({
+			
+			height : '100px',
+			left : '0px',
+			top : '100px',
+			opacity :'1'
+			//backgroundColor : 'blue' //animate 자체에서는 색상을 변경할 수는 없다, 밑에 콜백함수 이용
+		}, function(){  //이 animate가 다끝나면 이 함수를 실행하자
+			$(this).css('background-color', 'blue') // 그런데 바뀌는게 좀 어색하니까, j쿼리 ui 가져와서 처리해보자(교수님꺼 확인)
+			
+		})
+		
+		
+		
+		
+		
+	/*	
+		$('div').animate({
+			
+		//	'width' : '200px', // 2초에 걸쳐서 width의 길이를 늘려줘
+			'width' : '+=200px', // 현재 width에 200을 더해줘
+			'height' : '200px',
+			'left' : '100px',   // div의 position은 기본적으로 static(무조건 위에서 시작, left,right는 안먹힘)
+							   // 여기서는 absolute로 변경
+			'top' : '100px',				   
+			opacity : '0.6' // 투명도 조절
+		},2000) */
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	<div></div>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

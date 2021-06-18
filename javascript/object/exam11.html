@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	// 자바스크립트 내장 객체 : Number, String, Array, Math, Object, Date
+	
+	let str2 = new String("Hello World")
+	
+	String.prototype.changeStr = function() {
+		return this.bold().fontcolor('red').fontsize("20pt").link('http://www.naver.com')
+	}
+	
+	document.write(str2 + '<br>')
+	document.write(str2.changeStr() + '<br>')
+	
+	
+	
+	
+	let str = "Hello World"
+	console.log(str.charAt(0))
+	console.log(str.concat('!!!'))
+	
+	
+	
+	let num = 100 // 프로토타입을 쓸 수 없다! 
+	let num2 = new Number(100) //프로토타입을 쓸 수 있다! (이정도만 이해...)
+	
+	console.log(typeof num =='number')
+	console.log(typeof num2 =='number')
+	
+	console.log(num.constructor == Number)
+	console.log(num2.constructor == Number)
+	
+	Object.prototype.info = function(){
+		alert(this)
+	}
+	
+	num2.info()
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+

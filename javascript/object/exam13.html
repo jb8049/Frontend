@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	
+/* 
+   JSON.parse() 	: 문자열을 자바스크립트 객체로 변환
+   JSON.stringify()	: 자바스크립트 객체를 문자열로 변환
+*/
+
+	let person = {
+		   
+		   'name' : '홍길동',
+		   'phone' : '010-1111-2222',
+		   'addr' : '경기도 광명시',
+		   
+		   toJSON : function(){  // 내가 원하는 객체만 문자열로 변경할 수 있음!
+			   return{
+				   'name' : this.name,
+				   'phone' : this.phone
+			   }
+			   
+		   }
+   }
+
+/* console.log(person)
+   console.log(JSON.stringify(person))
+   alert(person)
+   alert(JSON.stringify(person)) // 객체를 문자열로 변환 */
+   
+	let strPerson = JSON.stringify(person)
+    console.log(strPerson)
+    document.write(strPerson + '<br>')
+    
+ 	let person2 = JSON.parse(strPerson)
+	console.log(person2)
+	
+	
+	let str = '{"name" : "홍길순", "phone" : "010-4444-5555"}' //쌍따옴표로 해주어야 객체로 바꿀 수 있다!
+	let obj = JSON.parse(str) 
+	console.log(obj)
+	
+	//여기 끝나고 array 폴더로
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+

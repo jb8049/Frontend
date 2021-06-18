@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	
+	function func01(){
+		
+		alert(arguments[0] + ' : ' + arguments[1] + ' : ' + arguments[2])
+		
+	}
+	
+	function func02(...numbers){ //정규 연산자, 몇 개의 인자를 전달할지 모른다!
+		
+		console.log(numbers)
+		alert(numbers[0] + ':' + numbers[1] + ':' + numbers[2])
+		alert(arguments[0] + ' : ' + arguments[1] + ' : ' + arguments[2])
+		
+	}
+	
+	
+	function func03(a,b, ...numbers){ //a와 b는 필수
+		alert(`a : ${a}, b : ${b}, number : ${numbers} `)
+	}
+	
+		
+		
+//	func01(1,2,3)
+//	func02(1,2,3)
+//	func02(1)
+	
+	func03(10,20,30,40,50,60)
+	
+	let array = [10,20,30]
+	// 첫 번째 arguments에 배열로 들어감
+	func01(array)
+		
+	// 이렇게 쓸 순 있지만.. 우리가 원하는 건 아니다
+//	func01(array[0], array[1], array[2])
+
+//	array가 가진 요소를 하나씩 분리해서 매개변수에 넣어줘
+//	func01.apply(null,array)	
+	func01(...array) //array가 가진 요소를 하나씩 분리해서 매개변수에 넣어줘
+	
+//	func03(1,2, ...array) // func03(1,2, 10,20,30)
+	func03(...array, ...array) //a와 b에 10,20 할당 후, 나머지는 배열로
+
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

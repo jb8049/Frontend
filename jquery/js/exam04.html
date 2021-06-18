@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+	
+//	 j쿼리의 목적은 DOM구조를 제어하는 것
+//   j쿼리 함수 자체가 애니매이션 효과를 가짐 ex) hide('drop', {direction:left},1000)
+//   h1 #h01 .h01 h2.h0  => 범위가 좁은게 우선순위가 높다
+//   (id(#h01), 특정 태그의 클래스(h2.h0)), 클래스(.h01), 태그만 사용한 것(h1))
+
+
+	$(document).ready(function(){   
+		
+		alert('ready...')
+		$('tr:even').css('background-color','yellow') 	//table의 짝수 행만
+		
+		
+		//아래의 mouseenter와 mouseleave를 같이 설정할 수 있는 hover 함수
+		
+		$('h2').hover(function(){   //엔터할 때와 리브할 때의 함수 각각 지정
+			$(this).css('background-color','blue')
+		}, function(){
+			$(this).css('background-color','white')
+		})
+		//이런거 j쿼리 안써도 내가 만들 수는 있지만, 코드가 많이 길어지겠지?, 간결하게 함수 하나로 할 수 있도록 해줌
+				
+		$('h2').dbclick(function(){ //더블 클릭 작동안됨
+			$(this).hide()
+		})
+		
+		
+		/* $('h2').mouseenter(function(){
+			
+			$(this).css('background-color', 'pink')
+		})		
+		
+		$('h2').mouseleave(function(){
+			
+			$(this).css('background-color','white')
+		}) */
+		
+		
+		
+		
+		
+	})
+
+	
+</script>
+
+
+</head>
+
+<body>
+	<h2>회원명부</h2>
+	
+	<table border=1>
+	
+		<tr>
+			<th>이름</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+	</table>
+		
+
+</body>
+</html>

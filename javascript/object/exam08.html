@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	function Person(name, phone, addr){
+		this.name =name
+		this.phone =phone
+		this.addr = addr
+	}
+	
+	//모든 사람들의 공통적인 취미는 영화감상
+	
+	Person.prototype.hobby ='영화감상'
+	Person.prototype.info = function(){
+		
+		for(let key in this){
+			let msg =''
+			for(let key in this){
+				//if(key != 'info')
+				if(typeof(this[key]) != 'function') // 함수는 출력할 필요없게 하면됨
+				msg += key + ' : ' + this[key] + '\n'
+			}
+			alert(msg)
+		}
+		
+	}
+	
+	/* let p = new Person("홍길동", "010-1111-2222", "경기도 광명시")
+	p.info()
+	console.log(p) */
+	
+	function Doctor(name, phone, addr, major){
+//		this.super = Person // 호출하고! 사용. / 그런데 위가 아는 상속과는 다른 개념임, 그냥 위에꺼 들고오는 것일뿐 상속관계는 아님 -1
+//		this.super(name,phone,addr, major)
+		
+		/* 이번에도 상속은 아님 -2  */
+		// Person.call(this, name, phone, addr) // Person 함수 호출, this는 Doctor 객체의 this ?? 이게 무슨 this라고??
+		// 위와 같은 표현 Person.call(this, ...arguments) // 그런데 전기 연산자 쓰면, major도 날아감!
+	
+		Person.apply(this, arguments) // apply는 인자 리스트를 전달함, call은 인자 하나하나
+		
+		this.major = major
+	}
+	
+	/*자바스크립트에서의 상속은 프로토타입을 무엇을 가지는지가 중요하다, 프로토타입으로 상속관계를 알 수 있다!! 어떤 프로토타입을 가지고 있느냐!!*/
+	Doctor.prototype  = Person.prototype //이게 가장 쉬운 방식이긴함
+//	Doctor.prototype = Object.create(Person.prototype)
+//	Doctor.prototype = new Person()
+	
+	let d = new Doctor('나최고', '010-5489-2469', '서울시 서초구 잘고쳐병원','신경외과')
+	
+	// Doctor.prototype  = Person.prototype 닥터가 펄슨의 프로토타입을 가져왔기 때문에 info()를 사용할 수 있음
+	
+	
+	
+	alert(d.info())
+	
+	console.log(d) //프로토타입의 대상이 오브젝트, Doctor는 Person이 가지고 있는 것을 가져와서 사용하고 싶다!(상속)
+	
+	console.log("d instanceof Person" + d instanceof Person)
+	console.log("d instanceof Doctor" + d instanceof Doctor)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+	
+</script>
+
+</head>
+
+
+
+
+<body>
+
+</body>
+</html>

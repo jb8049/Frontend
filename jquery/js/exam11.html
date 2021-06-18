@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	div {
+	
+		width : 100px;
+		height : 100px;
+		background-color: red;
+		position : absolute;
+	}
+	
+
+	
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+	
+	let startFunc = function(){
+		
+		$('h1')[0].innerText += '*' // 태그들은 배열로 저장되어있음..h1[0] 으로 접근해야함
+	}
+	
+	
+	$(document).ready(function(){
+	
+		
+		
+		$('h1').click(function(e, data){
+			console.log(arguments)
+			
+			data = data || '*' // data가 true면 그냥 들어가고, 아니면 *이 들어가 
+			// console.log('*') 그냥 '*'
+			// $(this)[0].innerText += '*'  // j쿼리 객체를 자바스크립트 객체로 변환 시킨 것
+											// 몇 개가 나올지 모르기 때문에!! 배열로 나온 것							
+			$(this)[0].innerText += data
+		})
+		
+		
+		
+			
+			
+		 setInterval(function(){
+			
+			
+		//	startFunc()
+		//	$('h1').click() // 내가 따로 클릭하지 않아도, h1을 클릭하도록 함
+		//	$('h1').trigger('click') // 클릭이라는 이벤트를 강제로 발생시켜라!! click은 이벤트 함수인데 하지않아도 강제로!
+			// 강제적으로 이벤트를 발생시켜주고 싶을 때 트리거를 사용한다
+			
+			 $('h1').trigger('click', '#') 
+			 $('h1').trigger('click', '#') 
+			
+		}, 1000)
+		
+		
+		setTimeout(function(){
+			
+			clearInterval(pid)
+			
+			
+		},2000)
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+	})
+	
+	
+</script>
+
+
+</head>
+
+<body>
+	<h1>start : </h1>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

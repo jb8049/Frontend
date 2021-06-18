@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	// 매개변수로 함수를 넘기는 것이 callBack() 함수
+	// 리턴값으로 함수를 넘겨보자
+	function returnFunction(){
+		return function(){
+			alert('return function')
+		}
+	}
+	
+	//	let ret = returnFunction()
+	//	ret()
+
+	// 첫 번째 3은 returnFunction()의 매개변수, 'A'는 return function()의 매개변수
+	// returnFunction(3)('A')
+	
+	function test(name){
+		var output = 'Hello ' + name + '!!!'
+	} // 이 함수가 끝났더라도, output이라는 변수를 유지시키기 위해 사용하는게 클로져
+		// 리턴으로 함수를 넘기는 행위가 클로져
+	
+	alert(output)
+		
+	function test(name){
+		var output = 'Hello ' + name + '!!!'
+		return function(){
+			alert(output)
+		}
+	}
+	
+//	test('홍길동')
+	f = test('홍길동') //함수가 끝나면, 사라지는데
+	f() // 함수가 끝나면 변수가 사라진다는 것이 중요!
+//	test('홍길동')()
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

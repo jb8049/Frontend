@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script>
+	let person ={
+			'name' : '홍길동',
+			'phone' : '010-1111=2222'
+	}
+	
+	console.log(person)
+	alert('name : ' + person.name + ', phone : ' + person.phone)
+	alert('name : ' + person['name'])
+	
+	alert('멤버변수 name 존재여부 : ' +('name' in person))
+	alert('멤버변수 phone 존재여부 : ' +('phone' in person))
+	
+	// 동적으로 객체 추가
+	person.addr = '경기도 광명시'
+	alert('멤버변수 addr 존재여부 : ' +('addr' in person))
+	console.log(person)
+	
+	// 동적으로 객체 삭제
+	delete(person.addr)
+	alert('멤버변수 addr 존재여부 : ' +('addr' in person))
+	console.log(person)
+
+</script>
+
+</head>
+
+
+
+
+<body>
+
+</body>
+</html>

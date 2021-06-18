@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	function func(num1, num2, num3){
+		alert(`${num1}, ${num2}, ${num3}`)
+	}
+	
+	function func(num1, num2, num3){
+		
+		// 자바스크립트에서는 0이 아닌 모든 수는 true로 인식함, undefined도 false로 인식함
+		// if(!num1) num1 = 0 // num1에 매개변수가 들어오지 않았다면, 0 대입
+		// if(!num2) num2 = 0
+		// if(!num3) num3 = 0 
+		
+		num1 = num1 || 0 // num1이 undefined면 false니까 or연산자 왼쪽꺼는 x, 오른쪽에 있는 값이 대입됨
+		num2 = num2 || 0
+		num3 = num3 || 0
+		
+		alert(`${num1}, ${num2}, ${num3}`)
+	}
+	
+	
+	function func(num1 = 0, num2 =0, num3 = 0){ // 간단하게 그냥 값이 안들어오면 그냥 0넣고 싶다!!, 매개변수가 없으면 0으로 초기화하라는 의미
+		alert(`${num1}, ${num2}, ${num3}`)
+	}
+	
+	func(100,200,300)
+	func(10,20) // num3은 undefined
+	func(10)
+	func()
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	
+	
+	// 오늘은 2021년 6월 15일 화요일입니다.
+	// d.today()
+	
+	let d = new Date()
+	console.log(d)
+	
+	Date.prototype.today = function(){  //프로토타입, this 쓰는거 이해해야함
+		
+		let year = this.getFullYear()
+		let month = this.getMonth() +1
+		let date = this.getDate()
+		let day = this.getDay()
+		let week =['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+	
+		return `오늘은 ${year}년 ${month}월 ${date}일 ${week[day]}입니다.` 
+		
+	}
+	
+	
+	alert(d.today())
+	
+	let d2 = new Date(2000,12-1,25)
+	alert(d2.today)
+
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+

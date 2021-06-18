@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script>
+
+	
+	function Person(n, p, a){
+		
+		let name = n
+		let phone = p
+		let addr = a
+		
+		this.getName = function(){
+			return name
+		}
+		
+		this.setName = function(n){
+			name = n
+		}
+	}
+	
+	this.toString = function(){
+		return {name : name, phone : phone, addr : addr}
+
+	}
+	
+	
+	let person = new Person("홍길동", "010-1111-2222", "경기도 광명시")
+	console.log(person.getName())
+	person.setName("홍가네")
+	console.log(person.getName())
+	
+	console.log(person.toString())
+
+	
+</script>
+
+</head>
+
+
+
+
+<body>
+
+</body>
+</html>

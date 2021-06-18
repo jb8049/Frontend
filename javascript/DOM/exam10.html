@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+
+
+/* 	function whenSubmit(){
+		
+//		아이디에 입력된 값이 있는지 없는지 알아아함 => id 속성 필요!, 밑에 추가해줬음
+		let id = document.getElementById("id")
+//		let password = document.getElementById("pwd") 이렇게 아이디 뽑아내면 복잡해 질 수 있음..
+//		input 태그들은 name이라는 속성이 있지 않아?? form 태그는 name 속성을 이용해서 태그에 접근할 수 있다!!(form에도 name속성필요!)
+//		form태그만 유일하게 name 속성으로 접근할 수 있다!!
+		if(id.value ==""){
+			
+			alert('아이디를 입력하세요')
+			return false
+		}
+		
+		
+		return false;
+	}
+ */
+	 
+
+	 function whenSubmit(){ // form태그에 이름 지정해서, 굳이 id 속성을 사용하지 않고 할 수 있다
+		
+		let f = document.inputForm  //원래는 document.inputForm.id.value 이런식으로 접근했는데 중복되니까!
+		
+		if(f.id.value == ''){
+			alert("아이디를 입력하세요.")
+			return false   // false를 반환하면, action으로 값 안넘김
+		}
+		
+		if(f.pwd.vlaue != f.pwdCheck.value){
+			alert("패스워드가 일치하지 않습니다.")
+			return false
+		}
+		
+		return true;
+	 }
+ 
+ 	
+	
+	
+
+</script>
+
+</head>
+<body>
+	
+	
+<!-- submit 버튼 누르면 action이 가르키는곳으로 날아감, 그런데 아직 요청하지마! 라고 하는게 return true/false(눌러도 안날라감)-->
+<!-- action의 url로 요청을 할지 말지 결정하는게 return => 이거를 함수로 만들자!!, 이게 true면 action이 넘기겠지-->
+	
+	
+	<form action="exam08.html" name="inputForm" onsubmit ="return whenSubmit()"> 
+		아이디 : <input type="text" name="id" id= "id"><br>
+		패스워드 : <input type="password" name="pwd"><br>
+		패스워드 확인 : <input type="password" name = "pwdCheck"><br>
+		<input type="submit" value ="전송">
+	</form>
+	
+	
+
+</body>
+</html>
