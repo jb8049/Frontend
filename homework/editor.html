@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<style>
+#header {
+	height: 70px;
+	border: 2px solid;
+	line-height: 70px;  /*행간 조절, font-size가 50px, line-height가 70px면 위아래 행간 10px씩 들어감*/
+	text-align: center;
+	background-color: #ffc500;
+}
+
+#text {
+	border: 2px solid;
+	background-color: #eaf1f2;
+	height: 600px;
+}
+</style>
+
+
+<script>
+	$(document).ready(function() {
+
+		$('#text').focus()
+
+		$('#bold').click(function() {
+			document.execCommand('bold', false, true); // 선택영역에 대한 편집 execCommand
+		})
+
+		$('#fontSize').change(function() {
+			document.execCommand('fontSize', false, $(this).val())
+		})
+
+		$('#fontColor').change(function() {
+			document.execCommand('foreColor', false, $(this).val()) /*선택된 영역을 변경하는 foreColor로 지정*/
+
+		})
+
+		$('#italic').click(function() {
+
+			document.execCommand('italic', false, true);
+
+		});
+
+		$("#underLine").click(function() {
+
+			document.execCommand('underLine', false, true);
+
+		});
+
+		$("#justifyLeft").click(function() {
+
+			document.execCommand('justifyLeft', false);
+
+		});
+		
+		$("#justifyCenter").click(function() {
+
+			document.execCommand('justifyCenter', false);
+
+		});
+
+		$("#justifyRight").click(function() {
+
+			document.execCommand('justifyRight', false);
+
+		});
+
+		
+
+	})
+</script>
+
+
+</head>
+<div id="header">
+
+	<button id="bold" style="height: 30px">
+		<span style="font-weight: bold">B</span>
+	</button>
+	
+	<button id="italic" style="height: 30px; font-style: italic;">Italic</button>
+	<button id="underLine" style="height: 30px; text-decoration: underline;">밑줄</button>
+	<button id="justifyLeft" style="height: 30px">왼쪽 정렬</button>
+	
+	<button id="justifyCenter" style="height: 30px">중앙 정렬</button>
+	
+	<button id="justifyRight" style="height: 30px">오른쪽 정렬</button>
+	
+	
+	<select id="fontSize" style="height: 30px">
+		<option value="">글자 크기</option>
+		<option value="1">4px</option>
+		<option value="2">8px</option>
+		<option value="3">10px</option>
+		<option value="4">12px</option>
+		<option value="5">16px</option>
+		<option value="6">20px</option>
+		<option value="10">30px</option>
+	
+	</select> <select id="fontColor" style="height: 30px">
+		<option value="">글자 색깔</option>
+		<option value="#f00">빨강</option>
+		<option value="#00f">파랑</option>
+		<option value="#0f0">초록</option>
+		<option value="#ffff00">노랑</option>
+		<option value="#000">검정</option>
+	</select>
+	
+
+</div>
+
+<div id="text" contenteditable="true"></div>
+<!--text를 편집하는 부분-->
+
+<body>
+
+</body>
+</html>
