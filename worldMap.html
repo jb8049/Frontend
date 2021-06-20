@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+
+	img{
+		width: 2000px;
+	  	height: 1000px; 
+	}
+	
+	#seoul {
+	  position: absolute;
+	  width: 20px;
+	  height: 20px;
+   	  bottom: 814.733;
+      left: 1608px;
+      top: 364px;
+	  background-color: red;
+	}
+	
+	#london {
+	  position: absolute;
+	  width: 20px;
+	  height: 20px;
+	  bottom: 650px;
+      left: 926px;
+      top: 263px;
+	  background-color: red;	
+	}
+	
+	#sydney{   /* 나머지 태그는 스크롤 확대,축소해도 위치가 고정되는데?  */
+		position: absolute;
+		width: 20px;
+		height: 20px;
+	   	bottom: 136px;
+    	left: 1738px;
+	    top: 500;
+		background-color: yellow;
+
+	}
+	
+	
+	
+	
+	
+</style>
+
+
+	
+
+<script>
+	$(document).ready(function(){
+		
+		document.getElementById('seoul').title = "대한민국 서울 " + getWorldTime(+9); // tilte 속성에 값 추가
+		document.getElementById('london').title = "영국 런던 " + getWorldTime(+0);
+		document.getElementById('sydney').title = "호주 시드니 " + getWorldTime(+10);
+		 
+		 $(".tooltip_event").tooltip();
+		
+		
+		 $('img').click(function(event){  // 이걸로 각 나라의 픽셀값을 알아내고, 그 픽셀값에 img를 배치
+				let x = event.pageX;
+				let y = event.pageY;
+				alert('x좌표 : ' + x +', y좌표 : ' + y)
+			})
+	})
+	
+	
+	function getWorldTime(tzOffset){
+		
+		var time = new Date()
+		
+		// getTime() : 로컬 컴퓨터의 시간을 밀리초 단위로 가져옴
+		// getTimezoneOffset() : 로컬 컴퓨터의 시간과 협정 세계 표준 시 간의 차이를 분단위로 가져옴
+		
+		var tz = time.getTime() + (time.getTimezoneOffset() * (60 * 1000)) + (tzOffset * (60 * 60 * 1000));
+
+		time.setTime(tz)  // setTime() : 밀리초를 인자값으로 받아 날짜 타입으로 변환
+		
+		
+		// 년, 월, 일
+		var date = leadingZeros(time.getFullYear(), 4) + '-'  // 년도는 4자리로 이루어져야함
+        + leadingZeros(time.getMonth() + 1, 2) + '-' // month는 +1 해줘야 현재 월과 동일함, 달은 2자리로, 두 자리 아니면 앞에 '0' 삽입
+        + leadingZeros(time.getDate(), 2) + ' ' +
+
+        leadingZeros(time.getHours(), 2) + ':'				// 시, 분, 초
+        + leadingZeros(time.getMinutes(), 2) + ':'
+        + leadingZeros(time.getSeconds(), 2);
+    	
+        return date;
+	}
+	
+	
+	// 날짜 포맷 지정
+	
+	function leadingZeros(n, digits) {  // 5월 => 05로 표현
+        var zero = '';
+        n = n.toString(); // 넘어오는 값이 number => String으로 변환
+
+        if (n.length < digits) { //문자열 "5"의 길이 1 < 넘겨받은 2
+            for (i = 0; i < digits - n.length; i++)
+                zero += '0';
+        }
+        return zero + n;
+    }
+	
+	
+
+
+</script>
+
+
+</head>
+
+
+<body>
+
+	<img id="world_map" src="https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjZfMzcg/MDAxNTgyNjk3ODU3MTkw.6r6HbR0G8n9D6SFCjIqyRyO8h0PsDxvPpDB_8uIuY0Ag.0inDk2A1-vXIwX71czc4GeqqjVwgX6fEQL8cp2iBZT0g.JPEG.naverschool/GettyImages-1158860187.jpg?type=w800">
+	<div id="seoul" class="tooltip_event" title=""></div>
+	<div id="london" class="tooltip_event" title=""></div>
+	<div id="sydney" class="tooltip_event" title=""></div>
+
+</body>
+</html>
